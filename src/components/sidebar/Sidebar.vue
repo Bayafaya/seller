@@ -2,39 +2,60 @@
   <div class="sidebar" :style="{ width: sidebarWidth }">
     <nav id="sidebarNav">
       <ul class="nav__links">
-        <li>
-          <sidebar-link to='/'  @click="toggleSidebar" icon="/src/images/navbutton.png">Закрыть окно</sidebar-link>
+        <li @click="toggleSidebar">
+          <sidebar-link  to='/' icon="/src/images/navbutton.png">Закрыть окно</sidebar-link>
         </li>
-        <li>
-          <sidebar-link to='/'  @click="toggleSidebar" icon="/src/images/Vector.png">Приборный панель</sidebar-link>
+        <li @click="toggleSidebar">
+          <sidebar-link
+            to="/"
+            icon="/src/images/Vector.png"
+            >Приборный панель</sidebar-link
+          >
         </li>
-        <li>
-          <sidebar-link to='/'  @click="toggleSidebar" icon="/src/images/box.png">Товары</sidebar-link>
+        <li @click="toggleSidebar">
+          <sidebar-link to="/"  icon="/src/images/box.png"
+            >Товары</sidebar-link
+          >
         </li>
-        <li>
-          <sidebar-link to='/'  @click="toggleSidebar" icon="/src/images/notification.png">Акции</sidebar-link>
+        <li @click="toggleSidebar">
+          <sidebar-link
+            to="/"
+            icon="/src/images/notification.png"
+            >Акции</sidebar-link
+          >
         </li>
-        <li>
-          <sidebar-link to='/'  @click="toggleSidebar" icon="/src/images/feedback.png">Отзывы</sidebar-link>
+        <li  @click="toggleSidebar">
+          <sidebar-link
+            to="/"
+            icon="/src/images/feedback.png"
+            >Отзывы</sidebar-link
+          >
         </li>
-        <li>
-          <sidebar-link to='/'  @click="toggleSidebar" icon="/src/images/profile.png">Профиль</sidebar-link>
+        <li  @click="toggleSidebar">
+          <sidebar-link
+            to="/"
+            icon="/src/images/profile.png"
+            >Профиль</sidebar-link
+          >
         </li>
-        <li>
-          <sidebar-link to='/'  @click="toggleSidebar" icon="/src/images/uilight.png">Выбрать тему</sidebar-link>
+        <li  @click="toggleSidebar">
+          <sidebar-link
+            to="/"
+            icon="/src/images/uilight.png"
+            >Выбрать тему</sidebar-link
+          >
         </li>
       </ul>
       <div class="exit"><img src="../../images/exit.png" alt="exit" /></div>
-      
     </nav>
   </div>
 </template>
 
 <script>
-import SidebarLink from './SidebarLink.vue'
+import SidebarLink from "./SidebarLink.vue";
 import { collapsed, toggleSidebar, sidebarWidth } from "./state";
 export default {
-  components:{SidebarLink},
+  components: { SidebarLink },
   setup() {
     return { collapsed, toggleSidebar, sidebarWidth };
   },
@@ -69,10 +90,11 @@ export default {
   width: 100%;
 }
 .nav__links li {
+  display: flex;
+  align-items: center;
   padding: 16px;
   border-left: 2px solid transparent;
   width: 100%;
-
 }
 .nav__links li img {
   width: 20px;
@@ -132,7 +154,7 @@ export default {
 .titleofnavlinks ul {
   list-style: none;
 }
-.titleofnavlinks ul li{
+.titleofnavlinks ul li {
   padding: 16px;
 }
 </style>
