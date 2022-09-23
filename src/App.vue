@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <Sidebar />
-    <div :style="{ 'margin-left': sidebarWidth }">
+    <div :style="{ 'margin-left': sidebarWidth,'transition':'0.3s'}">
       <router-view></router-view>
     </div>
   </div>
@@ -24,7 +24,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
 }
 :root {
   --primary-color: rgba(45, 190, 100, 1);

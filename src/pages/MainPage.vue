@@ -1,13 +1,20 @@
 <template>
-  <!-- <statistics-card :info="cardInfo" />
+  <div class="container">
+  <statistics-card :info="cardInfo" />
+  <statistics-card :info="cardInfo" />
+  <graphic/>
+
+  </div>
+    <!-- 
   <recent-sales-item :itemData="itemData" />
   <recent-sales-item :itemData="itemData" />
   <product-item :itemData="productData" />
   <product-with-description :itemData="productDescriptionData" />
   <search-input :dataAboutInput="dataAboutInput" />
   <default-button><h5>Текст</h5></default-button>
-  <phone-number-input /> -->
-   <graphic/>
+  <phone-number-input />
+    -->
+    <input type="text" placeholder="поиск" :value="inputValue" @input="inputChange"/>
 </template>
 
 <script>
@@ -57,8 +64,10 @@ export default {
         price: false,
         icon: true,
       },
+    
     };
   },
+
   components: {
     StatisticsCard,
     RecentSalesItem,
@@ -72,4 +81,6 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
