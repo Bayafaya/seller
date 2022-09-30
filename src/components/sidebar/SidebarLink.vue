@@ -1,12 +1,12 @@
 <template>
-  <router-link :to="to" class="link" :class="{ active: isActive }">
+  <div class="link" >
     <img class="icon" :src=icon alt="navbutton" />
     <transition name="fade">
       <h5 v-if="!collapsed">
         <slot></slot>
       </h5>
     </transition>
-  </router-link>
+  </div>
 </template>
 
 <script>
@@ -15,14 +15,33 @@ import { useRoute } from "vue-router";
 import { collapsed } from "./state";
 
 export default {
+  data(){
+    return{
+      isActive:'/'
+    }
+  },
   props: {
-    to: { type: String, required: true },
+    to: { type: String, required: false },
     icon: { type: String, required: true },
   },
   setup(props) {
     const route = useRoute();
     const isActive = computed(() => route.path === props.to);
     return { isActive, collapsed };
+  },
+  // methods:{
+    
+  // },
+  watch:{
+      isActive(value){
+      const links = document.getElementsByClassName('links')
+      for (let index = 0; index < links.length; index++) {
+        const element = links[index];
+        element.classList.remove('active')
+      }
+       const activePage = document.getElementById(this.$route.path)
+       activePage.classList.add('active')
+      }
   },
 };
 </script>
@@ -35,20 +54,13 @@ export default {
   text-decoration: none;
   color: black;
 }
-h5{
-  font-size: 16px;
-  line-height: 24px;
-}
 .link h5{
   white-space:nowrap;
+  margin-left: 14px;
 }
 .link .icon {
   flex-shrink: 0;
-  width: 20px;
-  margin-right: 14px;
 }
-
-
 .fade-enter-from,
 .fade-leave-to{
   opacity: 0;
@@ -58,6 +70,4 @@ h5{
 .fade-leave-active{
   transition: opacity 0.1s ease;
 }
-
-
 </style>

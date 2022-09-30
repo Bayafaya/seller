@@ -61,9 +61,9 @@ export default {
   padding: 24px 0;
 }
 
-.product_item h5 {
+/* .product_item h5 {
   font-weight: 600;
-}
+} */
 .icon {
   width: 56px;
   height: 56px;

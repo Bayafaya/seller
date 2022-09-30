@@ -1,41 +1,26 @@
 <template>
+  <all-stat />
   <div class="container">
-  <statistics-card :info="cardInfo" />
-  <statistics-card :info="cardInfo" />
-  <graphic/>
-
+    <h4>Последние продажи</h4>
+    <div class="title__of__list"><h5>Номер заказа</h5> <h6>Статус</h6> <h6>Прибыль</h6></div>
+    <recent-sales-item :itemData="itemData"/>
+    <recent-sales-item :itemData="itemData"/>
+    <recent-sales-item :itemData="itemData"/>
+    <recent-sales-item :itemData="itemData"/>
+    <recent-sales-item :itemData="itemData"/>
+    <recent-sales-item :itemData="itemData"/>
+    <recent-sales-item :itemData="itemData"/>
   </div>
-    <!-- 
-  <recent-sales-item :itemData="itemData" />
-  <recent-sales-item :itemData="itemData" />
-  <product-item :itemData="productData" />
-  <product-with-description :itemData="productDescriptionData" />
-  <search-input :dataAboutInput="dataAboutInput" />
-  <default-button><h5>Текст</h5></default-button>
-  <phone-number-input />
-    -->
-    <input type="text" placeholder="поиск" :value="inputValue" @input="inputChange"/>
 </template>
 
 <script>
-import StatisticsCard from "../components/StatisticsCard.vue";
+import AllStat from "../components/statistics/AllStat.vue";
 import RecentSalesItem from "../components/RecentSalesItem.vue";
-import ProductItem from "../components/ProductItem.vue";
-import ProductWithDescription from "../components/ProductWithDescription.vue";
-import SearchInput from "../components/Ui/SearchInput.vue";
-import DefaultButton from "../components/Ui/DefaultButton.vue";
-import PhoneNumberInput from "../components/Ui/PhoneNumberInput.vue";
-import Graphic from "../components/Graphic.vue";
 
 export default {
+  components: { AllStat, RecentSalesItem },
   data() {
     return {
-      cardInfo: {
-        title: "Прибыль",
-        link: "src/images/graphStat.svg",
-        price: 2504.0,
-        discount: 30,
-      },
       itemData: {
         id: 16368,
         status: "В ожидании",
@@ -64,23 +49,18 @@ export default {
         price: false,
         icon: true,
       },
-    
     };
   },
-
-  components: {
-    StatisticsCard,
-    RecentSalesItem,
-    ProductItem,
-    ProductWithDescription,
-    SearchInput,
-    DefaultButton,
-    PhoneNumberInput,
-    Graphic
-},
 };
 </script>
 
 <style scoped>
-
+  .title__of__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    margin-top: 16px;
+    border-bottom: 1px solid var( --light-color-8);
+  }
 </style>

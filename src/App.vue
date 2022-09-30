@@ -10,6 +10,7 @@
 <script>
 import Sidebar from "./components/sidebar/Sidebar.vue";
 import { sidebarWidth } from "@/components/sidebar/state";
+import { useRoute } from 'vue-router';
 
 export default {
   components: { Sidebar },
@@ -19,6 +20,7 @@ export default {
 };
 
 </script>
+
 <style>
 * {
   margin: 0;
@@ -81,6 +83,11 @@ span {
 }
 .container{
   width:  64%; 
+  /* width:  1120px;  */
+  margin: 0 auto;
+}
+.container__form{
+  width:  720px; 
   margin: 0 auto;
 }
 </style>

@@ -1,20 +1,41 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from '@/pages/MainPage.vue'
-import UserPage from '@/pages/UserPage.vue'
+import Profile from '@/pages/Profile.vue'
+import Notifications from '@/pages/Notifications.vue'
+import Reviews from '@/pages/Reviews.vue'
+import Products from '@/pages/Products.vue'
 
-const routes = [
-    {
-        path:'/',
-        component: MainPage
-    },
-    {
-        path:'/user',
-        component: UserPage
-    },
-]
+
 const router = createRouter({
-    routes,
-    history: createWebHashHistory()
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes: [
+        {
+            path: '/',
+            name: 'main',
+            component: MainPage,
+        },
+        {
+            path: '/profile',
+            name: 'profile',
+            component: Profile,
+        },
+        {
+            path: '/reviews',
+            name: 'reviews',
+            component: Reviews,
+        },
+        {
+            path: '/notifications',
+            name: 'notifications',
+            component: Notifications,
+        },
+        {
+            path: '/products',
+            name: 'products',
+            component: Products,
+        },
+    ],
+
 })
 
 export default router;

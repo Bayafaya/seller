@@ -1,7 +1,7 @@
 <template>
   <div class="input">
     <div v-if="dataAboutInput.icon"><img src="../../images/search.svg" alt="search"></div>
-    <input v-if="!dataAboutInput.price" placeholder="Текст" type="text">
+    <input v-if="!dataAboutInput.price" :placeholder="dataAboutInput.placeholder" type="text">
     <input v-else placeholder="0" type="number">
     <h5 v-if="dataAboutInput.price">c</h5>
   </div>

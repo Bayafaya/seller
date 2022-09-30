@@ -2,56 +2,53 @@
   <div class="sidebar" :style="{ width: sidebarWidth }">
     <nav id="sidebarNav">
       <ul class="nav__links">
-        <li @click="toggleSidebar">
-          <sidebar-link  to='/' icon="/src/images/navbutton.png">Закрыть окно</sidebar-link>
+        <li class="links" @click="toggleSidebar">
+          <sidebar-link icon="/src/images/ri-menu-line.svg">Закрыть окно</sidebar-link>
         </li>
-        <li @click="toggleSidebar">
-          <sidebar-link
-            to="/"
-            icon="/src/images/Vector.png"
+        <li class="links active" @click="$router.push('/')" id="/">
+          <sidebar-link  to="/"
+            icon="/src/images/ri-pie-chart-line.svg"
             >Приборный панель</sidebar-link
           >
         </li>
-        <li @click="toggleSidebar">
-          <sidebar-link to="/"  icon="/src/images/box.png"
+        <li class="links" @click="$router.push('/products')" id="/products">
+          <sidebar-link icon="/src/images/ri-inbox-archive-line.svg" to="/products"
             >Товары</sidebar-link
           >
         </li>
-        <li @click="toggleSidebar">
+        <li class="links" @click="$router.push('/notifications')" id="/notifications">
           <sidebar-link
-            to="/"
-            icon="/src/images/notification.png"
+            icon="/src/images/ri-notification-3-line.svg" to="/notifications"
             >Акции</sidebar-link
           >
         </li>
-        <li  @click="toggleSidebar">
+        <li class="links" @click="$router.push('/reviews')" id="/reviews">
           <sidebar-link
-            to="/"
-            icon="/src/images/feedback.png"
+            icon="/src/images/ri-star-line.svg" to="/reviews"
             >Отзывы</sidebar-link
           >
         </li>
-        <li  @click="toggleSidebar">
+        <li class="links" @click="$router.push('/profile')" id="/profile">
           <sidebar-link
-            to="/"
-            icon="/src/images/profile.png"
+            icon="/src/images/ri-user-3-line.svg" to="/profile"
             >Профиль</sidebar-link
           >
         </li>
-        <li  @click="toggleSidebar">
-          <sidebar-link
-            to="/"
-            icon="/src/images/uilight.png"
+        <li class="links" @click="toggleSidebar">
+          <sidebar-link 
+            icon="/src/images/ri-sun-line.svg"
             >Выбрать тему</sidebar-link
           >
         </li>
+        
       </ul>
-      <div class="exit"><img src="../../images/exit.png" alt="exit" /></div>
+      <div class="exit"><img src="/src/images/ri-logout-box-r-line.svg" alt="logout" /></div>
     </nav>
   </div>
 </template>
 
 <script>
+import { useRoute } from 'vue-router';
 import SidebarLink from "./SidebarLink.vue";
 import { collapsed, toggleSidebar, sidebarWidth } from "./state";
 export default {
@@ -59,6 +56,16 @@ export default {
   setup() {
     return { collapsed, toggleSidebar, sidebarWidth };
   },
+  // mounted(){
+  //   const route = useRoute();
+  //     console.log(route.path)
+  // },
+  // watch:{
+  //     isActive(value){
+  //       const route = useRoute();
+  //       console.log(route.path)
+  //     }
+  // }
 };
 </script>
 
@@ -89,30 +96,24 @@ export default {
   row-gap: 8px;
   width: 100%;
 }
-.nav__links li {
+.links {
   display: flex;
   align-items: center;
+  justify-content: start;
   padding: 16px;
   border-left: 2px solid transparent;
   width: 100%;
+  transition: 0.5s;
 }
-.nav__links li img {
-  width: 20px;
-}
-.nav__links li:nth-child(6) {
-  padding: 18px;
-}
-.nav__links li:nth-child(6) img {
-  width: 16px;
-}
-.nav__links li:hover {
+
+.links:hover {
   background: var(--primary-color-8);
   border-left: 2px solid var(--primary-color);
   filter: invert(50%) sepia(82%) saturate(925%) hue-rotate(99deg)
     brightness(94%) contrast(104%);
   cursor: pointer;
 }
-.nav__links li:active {
+.links:active {
   background: var(--primary-color-8);
   border-left: 2px solid var(--primary-color);
   filter: invert(50%) sepia(82%) saturate(925%) hue-rotate(99deg)
@@ -122,6 +123,7 @@ export default {
 .exit {
   padding: 16px;
   border-left: 2px solid transparent;
+  width: 100%;
 }
 .exit:hover {
   background: var(--primary-color-8);
@@ -137,24 +139,12 @@ export default {
     brightness(94%) contrast(104%);
   cursor: pointer;
 }
-.exit img {
-  width: 20px;
+.active{
+  background: var(--primary-color-8);
+  border-left: 2px solid var(--primary-color);
+  filter: invert(50%) sepia(82%) saturate(925%) hue-rotate(99deg)
+  brightness(94%) contrast(104%);
+  cursor: pointer;
 }
-.titleofnavlinks {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  transition: 0.3s ease;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-.titleofnavlinks ul {
-  list-style: none;
-}
-.titleofnavlinks ul li {
-  padding: 16px;
-}
+
 </style>

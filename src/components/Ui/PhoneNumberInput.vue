@@ -35,6 +35,9 @@ export default {};
   padding: 12px;
   border-bottom: 1x solid var(--light-color-8);
 }
+.input__component div:nth-child(1){
+    border-bottom: 1px solid var(--light-color-8);
+}
 .input__component:focus-within  div:nth-child(1){
   border-bottom: 2px solid var(--primary-color);
 }

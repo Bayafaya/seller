@@ -16,7 +16,7 @@
     </div>
     <h5>{{ itemData.price }} c</h5>
     <h5>Скалд: <b>{{ itemData.count }} c</b></h5>
-    <h6 class="edit">Просто</h6>
+    <h6 class="edit">Открыть</h6>
   </div>
 </template>
 
@@ -42,7 +42,7 @@ export default {
 }
 
 .product_item h5 {
-  font-weight: 600;
+  font-weight: 500;
 }
 .icon {
   width: 56px;
