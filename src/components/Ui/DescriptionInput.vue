@@ -1,6 +1,6 @@
 <template>
     <div class="textarea">
-      <textarea :placeholder="dataAboutInput.placeholder" type="text"></textarea>
+      <textarea :placeholder="dataAboutInput" type="text"></textarea>
     </div>
   </template>
   
@@ -8,7 +8,7 @@
   export default {
   props:{
     dataAboutInput:{
-      type:Object,
+      type:String,
       required:false,
     }
   }
