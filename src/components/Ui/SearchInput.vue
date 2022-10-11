@@ -1,7 +1,7 @@
 <template>
   <div class="input">
-    <div v-if="dataAboutInput.icon"><img src="../../images/search.svg" alt="search"></div>
-    <input v-if="!dataAboutInput.price" :placeholder="dataAboutInput.placeholder" type="text">
+    <img v-if="dataAboutInput.icon" src="../../images/search.svg" alt="search">
+    <input v-if="!dataAboutInput.price" :placeholder="dataAboutInput.placeholder" required type="text">
     <input v-else placeholder="0" type="number">
     <h5 v-if="dataAboutInput.price">c</h5>
   </div>
@@ -22,9 +22,9 @@ props:{
 .input{
   display: flex;
   align-items: center;
-  background: var(--light-color-4);
+  background: var(--bg-statistic);
   padding: 12px;
-  border-bottom: 1px solid var(--light-color-8);
+  border-bottom: 1px solid var(--border-of-stats);
 }
 .input img{
  margin-right: 10px;
@@ -34,18 +34,18 @@ props:{
  border: none;
  font-size: 16px;
  line-height: 24px;
- color: var(--light-color-72);
+ color: var(--text-ui);
  width: 100%;
 }
 .input input:focus-visible{ 
-  color: var(--light-color);
+  color: var(--hover-ui);
   outline: none;
 }
 .input:focus-within {
   border-bottom: 2px solid var(--primary-color);
 }
 .input:hover{
-  border-bottom: 1px solid var(--light-color);
+  border-bottom: 1px solid var(--hover-ui);
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

@@ -34,6 +34,7 @@ select {
     padding: 12px 20px 12px 12px;
     overflow: hidden;
     scroll-behavior: smooth;
+    color:var(--hover-ui);
 }
 
 select#xyz {

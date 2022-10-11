@@ -1,71 +1,135 @@
 <template>
   <div class="sidebar" :style="{ width: sidebarWidth }">
     <nav id="sidebarNav">
-      <ul class="nav__links">
+      <ul class="nav__links" v-if="!this.$q.dark.isActive">
         <li class="links" @click="toggleSidebar">
-          <sidebar-link icon="/src/images/ri-menu-line.svg">Закрыть окно</sidebar-link>
+          <sidebar-link icon="/src/images/SideBarLight/ri-menu-line.svg"
+            >Закрыть окно</sidebar-link
+          >
         </li>
         <li class="links active" @click="$router.push('/')" id="/">
-          <sidebar-link  to="/"
-            icon="/src/images/ri-pie-chart-line.svg"
+          <sidebar-link
+            to="/"
+            icon="/src/images/SideBarLight/ri-pie-chart-line.svg"
             >Приборный панель</sidebar-link
           >
         </li>
         <li class="links" @click="$router.push('/products')" id="/products">
-          <sidebar-link icon="/src/images/ri-inbox-archive-line.svg" to="/products"
+          <sidebar-link
+            icon="/src/images/SideBarLight/ri-inbox-archive-line.svg"
+            to="/products"
             >Товары</sidebar-link
           >
         </li>
-        <li class="links" @click="$router.push('/notifications')" id="/notifications">
+        <li
+          class="links"
+          @click="$router.push('/notifications')"
+          id="/notifications"
+        >
           <sidebar-link
-            icon="/src/images/ri-notification-3-line.svg" to="/notifications"
+            icon="/src/images/SideBarLight/ri-notification-3-line.svg"
+            to="/notifications"
             >Акции</sidebar-link
           >
         </li>
         <li class="links" @click="$router.push('/reviews')" id="/reviews">
           <sidebar-link
-            icon="/src/images/ri-star-line.svg" to="/reviews"
+            icon="/src/images/SideBarLight/ri-star-line.svg"
+            to="/reviews"
             >Отзывы</sidebar-link
           >
         </li>
         <li class="links" @click="$router.push('/profile')" id="/profile">
           <sidebar-link
-            icon="/src/images/ri-user-3-line.svg" to="/profile"
+            icon="/src/images/SideBarLight/ri-user-3-line.svg"
+            to="/profile"
             >Профиль</sidebar-link
           >
         </li>
+        <li class="links" @click="this.$q.dark.toggle()">
+          <sidebar-link icon="/src/images/SideBarLight/ri-sun-line.svg"
+            >Сменить тему
+          </sidebar-link>
+        </li>
+      </ul>
+      <ul class="nav__links" v-else>
         <li class="links" @click="toggleSidebar">
-          <sidebar-link 
-            icon="/src/images/ri-sun-line.svg"
-            >Выбрать тему</sidebar-link
+          <sidebar-link icon="/src/images/SideBarDark/ri-menu-line.svg"
+            >Закрыть окно</sidebar-link
           >
         </li>
-        
+        <li class="links active" @click="$router.push('/')" id="/">
+          <sidebar-link
+            to="/"
+            icon="/src/images/SideBarDark/ri-pie-chart-line.svg"
+            >Приборный панель</sidebar-link
+          >
+        </li>
+        <li class="links" @click="$router.push('/products')" id="/products">
+          <sidebar-link
+            icon="/src/images/SideBarDark/ri-inbox-archive-line.svg"
+            to="/products"
+            >Товары</sidebar-link
+          >
+        </li>
+        <li
+          class="links"
+          @click="$router.push('/notifications')"
+          id="/notifications"
+        >
+          <sidebar-link
+            icon="/src/images/SideBarDark/ri-notification-3-line.svg"
+            to="/notifications"
+            >Акции</sidebar-link
+          >
+        </li>
+        <li class="links" @click="$router.push('/reviews')" id="/reviews">
+          <sidebar-link
+            icon="/src/images/SideBarDark/ri-star-line.svg"
+            to="/reviews"
+            >Отзывы</sidebar-link
+          >
+        </li>
+        <li class="links" @click="$router.push('/profile')" id="/profile">
+          <sidebar-link
+            icon="/src/images/SideBarDark/ri-user-3-line.svg"
+            to="/profile"
+            >Профиль</sidebar-link
+          >
+        </li>
+        <li class="links"  @click="this.$q.dark.toggle()">
+          <sidebar-link
+            icon="/src/images/SideBarDark/ri-moon-line.svg"
+            >Сменить тему
+          </sidebar-link>
+        </li>
       </ul>
-      <div class="exit"><img src="/src/images/ri-logout-box-r-line.svg" alt="logout" /></div>
+      <div class="exit" v-if="!this.$q.dark.isActive">
+        <img
+          src="/src/images/SideBarLight/ri-logout-box-r-line.svg"
+          alt="logout"
+        />
+      </div>
+      <div class="exit" v-else>
+        <img
+          src="/src/images/SideBarDark/ri-logout-box-r-line.svg"
+          alt="logout"
+        />
+      </div>
     </nav>
   </div>
 </template>
 
 <script>
-import { useRoute } from 'vue-router';
+import { useRoute } from "vue-router";
 import SidebarLink from "./SidebarLink.vue";
 import { collapsed, toggleSidebar, sidebarWidth } from "./state";
+import { ref } from "vue";
 export default {
   components: { SidebarLink },
   setup() {
-    return { collapsed, toggleSidebar, sidebarWidth };
+    return { collapsed, toggleSidebar, sidebarWidth, first: ref(true) };
   },
-  // mounted(){
-  //   const route = useRoute();
-  //     console.log(route.path)
-  // },
-  // watch:{
-  //     isActive(value){
-  //       const route = useRoute();
-  //       console.log(route.path)
-  //     }
-  // }
 };
 </script>
 
@@ -78,6 +142,7 @@ export default {
   left: 0;
   bottom: 0;
   transition: 0.3s ease;
+
 }
 .sidebar nav {
   display: flex;
@@ -87,6 +152,7 @@ export default {
   height: 100%;
   border-right: 1px solid var(--light-color-8);
   padding: 4px 0 26px;
+  background: var(--statistic);
 }
 .nav__links {
   display: flex;
@@ -139,12 +205,11 @@ export default {
     brightness(94%) contrast(104%);
   cursor: pointer;
 }
-.active{
+.active {
   background: var(--primary-color-8);
   border-left: 2px solid var(--primary-color);
   filter: invert(50%) sepia(82%) saturate(925%) hue-rotate(99deg)
-  brightness(94%) contrast(104%);
+    brightness(94%) contrast(104%);
   cursor: pointer;
 }
-
 </style>

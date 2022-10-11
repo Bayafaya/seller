@@ -17,22 +17,24 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .recent__sales__item {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--light-color-8);
+  border-bottom: 1px solid var(--recent-item-border);
   border-right: 1px solid transparent;
   padding: 24px 0;
-  color: var(--light-color-48);
+  color: var(--recent-item);
 }
+
 .recent__sales__item:hover {
   border-right: 4px solid var(--primary-color);
-  background: var(--light-color-4);
+  background: var(--background-hover-recent);
   padding: 24px 24px;
   transition: 0.5s;
   color: var(--light-color);
 }
+
 /* @media (max-width: 792px) {
   .recent__sales__item h5 {
     font-size: 14px;

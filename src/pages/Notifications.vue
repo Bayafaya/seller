@@ -70,7 +70,7 @@ export default {
   flex-direction: column;
   padding: 48px 0 0 0;
   row-gap: 32px;
-  border-bottom: 1px solid var(--light-color-8);
+  border-bottom: 1px solid var(--recent-item-border);
 }
 .tabs {
   display: flex;

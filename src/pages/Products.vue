@@ -93,7 +93,7 @@ export default {
   grid-row-gap: 32px;
   justify-content: space-between;
   padding: 44px 0;
-  border-bottom: 1px solid var(--light-color-8);
+  border-bottom: 1px solid var(--recent-item-border);
 }
 .search__bar h3:nth-child(1) {
   grid-area: product;
@@ -114,7 +114,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 12px 0;
-  border-bottom: 1px solid var(--light-color-8);
+  border-bottom: 1px solid var(--recent-item-border);
 }
 .product__list__null{
   display: flex;

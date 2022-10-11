@@ -18,6 +18,7 @@ import AllStat from "../components/statistics/AllStat.vue";
 import RecentSalesItem from "../components/RecentSalesItem.vue";
 
 export default {
+ 
   components: { AllStat, RecentSalesItem },
   data() {
     return {
@@ -61,6 +62,6 @@ export default {
     align-items: center;
     padding: 24px 0;
     margin-top: 16px;
-    border-bottom: 1px solid var( --light-color-8);
+    border-bottom: 1px solid var(--recent-item-border);
   }
 </style>

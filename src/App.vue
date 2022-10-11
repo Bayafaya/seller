@@ -1,7 +1,8 @@
 <template>
   <div class="app">
     <Sidebar />
-    <div :style="{ 'margin-left': sidebarWidth,'transition':'0.3s'}">
+    <div>
+      <!-- :style="{ 'margin-left': sidebarWidth,'transition':'0.3s'}" -->
       <router-view></router-view>
     </div>
   </div>
@@ -10,11 +11,13 @@
 <script>
 import Sidebar from "./components/sidebar/Sidebar.vue";
 import { sidebarWidth } from "@/components/sidebar/state";
-import { useRoute } from 'vue-router';
-
+import { useQuasar } from 'quasar'
+import 'quasar/dist/quasar.css';
 export default {
   components: { Sidebar },
   setup() {
+    const $q = useQuasar();
+    $q.dark.set(false);
     return { sidebarWidth };
   },
 };
@@ -45,6 +48,24 @@ export default {
   --dark-color-24: rgba(255, 255, 255, 0.24);
   --dark-color-16: rgba(255, 255, 255, 0.16);
   --dark-color-8: rgba(255, 255, 255, 0.08);
+
+  /* ------------------------ */
+  --recent-item:rgba(21, 21, 21, 0.48);
+  --recent-item-border: rgba(21, 21, 21, 0.08);
+  --background-hover-recent:rgba(21, 21, 21, 0.04);
+  --bg-statistic: rgba(21, 21, 21, 0.04);
+  --statistic:rgba(255, 255, 255, 1);
+  --count-of-product: rgba(21, 21, 21, 0.48);
+  --border-of-stats: rgba(21, 21, 21, 0.08);
+  --hover-ui:rgba(21, 21, 21, 1);
+  --text-ui: rgba(21, 21, 21, 0.72); 
+  /* ----------------------------- */
+  --card-img-url--zz:url("/src/images/ri-zzz-fill.svg");
+  --card-arrow-url:url("src/images/ri-arrow-right-s-fill.svg");
+  --card-store-url:url("src/images/ri-store-line.svg");
+  --card-language-url:url("src/images/ri-earth-line.svg");
+  /* ---------------------------- */
+  --modal-bg:rgba(0, 0, 0, 0.5);
 }
 h1 {
   font-size: 48px;
@@ -89,5 +110,22 @@ span {
 .container__form{
   width:  720px; 
   margin: 0 auto;
+}
+body.body--dark{
+  background: #151515;;
+  --recent-item:rgba(255, 255, 255, 1);
+  --recent-item-border:rgba(255, 255, 255, 0.12);
+  --background-hover-recent: rgba(255, 255, 255, 1);
+  --bg-statistic:rgba(255, 255, 255, 0.08);
+  --statistic:rgba(21, 21, 21, 1);
+  --count-of-product: rgba(255, 255, 255, 0.56);
+  --border-of-stats:rgba(255, 255, 255, 0.12);
+  --hover-ui:rgba(255, 255, 255, 1);
+  --text-ui:rgba(255, 255, 255, 0.72);
+  --card-img-url--zz: url("/src/images/ri-zzz-fill-white.svg");
+  --card-arrow-url:url("src/images/ri-arrow-right-s-fill-white.svg");
+  --card-store-url:url("src/images/ri-store-line-white.svg");
+  --card-language-url:url("src/images/ri-earth-line-white.svg");
+  --modal-bg:rgba(255, 255, 255, 0.2);
 }
 </style>

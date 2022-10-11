@@ -36,7 +36,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--light-color-8);
+  border-bottom: 1px solid var(--recent-item-border);
   border-right: 1px solid transparent;
   padding: 24px 0;
 }
@@ -44,6 +44,7 @@ export default {
 .product_item h5 {
   font-weight: 500;
 }
+
 .icon {
   width: 56px;
   height: 56px;
@@ -55,10 +56,14 @@ export default {
   margin: 0 16px;
 }
 .icon img {
+  padding: 4px;
   height: 100%;
 }
 .product_item h5:nth-child(3) b {
-  color: var(--light-color-48);
+  color: var(--count-of-product);
+}
+.product_item:hover h5:nth-child(3) b {
+  color: rgba(21, 21, 21, 0.48);
 }
 .product_item__title {
   display: flex;
@@ -67,7 +72,7 @@ export default {
 }
 .product_item:hover {
   border-right: 4px solid var(--primary-color);
-  background: var(--light-color-4);
+  background: var(--background-hover-recent);
   padding: 24px 24px;
   transition: 0.5s;
   color: var(--light-color);

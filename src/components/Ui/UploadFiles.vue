@@ -31,13 +31,13 @@ label{
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: var(--light-color-4);
+  background: var(--bg-statistic);
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: var(--light-color-72);
   padding: 48px;
-  border: 1px dashed var(--light-color-8);
+  border: 1px dashed var(--recent-item-border);
   column-gap: 8px;
 }
 div{
@@ -46,6 +46,6 @@ div{
   row-gap: 8px;
 }
 span{
-color: var(--light-color-48);
+  color: var(--text-ui);
 }
 </style>

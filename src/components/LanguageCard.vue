@@ -16,7 +16,7 @@
   
   <style scoped>
   .card {
-    background: var(--light-color-4);
+    background: var(--bg-statistic);
     min-height: 152px;
     padding: 24px;
     cursor: pointer;
@@ -37,7 +37,7 @@
     color: var(--dark-color);
   }
   .icon-head {
-    background-image: url('../images/ri-earth-line.svg');
+    background-image:var(--card-language-url);
     width: 32px;
     height: 32px;
   }

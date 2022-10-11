@@ -1,7 +1,7 @@
 <template>
     <div class="container__form">
       <div class="edit__store">
-        <div class="back__link">
+        <div class="back__link"  @click="changePage(1)">
           <img src="../images/ri-arrow-go-back-fill.svg" alt="back" />
           <h5>вернуться</h5>
         </div>
@@ -11,8 +11,8 @@
       <form class="form">
         <h4>Контактные данные</h4>
         <div class="user__data">
-          <search-input :dataAboutInput="dataAboutInput" />
-          <search-input :dataAboutInput="dataAboutInput" />
+          <search-input :dataAboutInput="dataAboutInput"/>
+          <search-input :dataAboutInput="dataAboutInput"/>
           <description-input dataAboutInput="Описание" />
           <div class="user__data__label">
             <span>Номер телефона</span>
@@ -20,7 +20,7 @@
           </div>
           <div class="user__data__label">
             <span>Выберите страну</span>
-            <select-gray :options="options" />
+            <select-gray :options="options"/>
           </div>
           <div class="user__data__label">
             <span>Выберите область</span>
@@ -42,7 +42,7 @@
           />
           <div class="user__data__label">
             <span>Тип баннера</span>
-            <div class="type__of__baner">
+            <div class="type__of__baner" @click="dialogVisible(true)">
               <h6>Выбрать</h6>
               <img src="../images/ri-arrow-right-s-fill.svg" alt="arrow" />
             </div>
@@ -50,7 +50,7 @@
         </div>
         <default-button>Сохранить</default-button>
       </form>
-        <size-of-banner :show="false"/>
+        <size-of-banner :show="$store.state.profile.dialogVisible"/>
     </div>
   </template>
   
@@ -63,6 +63,7 @@
   import UploadFiles from "../components/Ui/UploadFiles.vue";
   import DefaultButton from "../components/Ui/DefaultButton.vue";
   import SizeOfBanner from "../components/SizeOfBanner.vue";
+  import {mapMutations} from 'vuex';
   
   export default {
     data() {
@@ -103,23 +104,30 @@
       DefaultButton,
       SizeOfBanner
   },
+  methods:{
+        ...mapMutations({
+            changePage:'profile/changePage',
+            dialogVisible:'profile/dialogVisibleChange',
+        }),
+    },
   };
   </script>
   
   <style scoped>
   span {
-    color: var(--light-color-48);
+    color: var(--text-ui);
   }
   .edit__store {
     display: flex;
     flex-direction: column;
     padding: 48px 0 48px;
-    border-bottom: 1px solid var(--light-color-8);
+    border-bottom: 1px solid var(--border-of-stats);
   }
   .back__link {
     display: flex;
     align-items: center;
     column-gap: 8px;
+    cursor: pointer;
   }
   .edit__store h3 {
     padding: 48px 0 0 0;
@@ -143,7 +151,7 @@
     grid-template-rows: auto auto auto auto auto auto;
     grid-column-gap: 16px;
     padding-top: 32px;
-    border-bottom: 1px solid var(--light-color-8);
+    border-bottom: 1px solid var(--border-of-stats);
   }
   .user__data__label {
     display: flex;
@@ -198,11 +206,11 @@
     align-items: center;
     padding: 12px;
     gap: 16px;
-    background: var(--light-color-4);
-    border-bottom: 1px solid var(--light-color-8);
+    background-color: var(--bg-statistic);
+    border-bottom: 1px solid var(--border-of-stats);
   }
   .type__of__baner:hover {
-    border-bottom: 1px solid var(--light-color);
+    border-bottom: 1px solid var(--hover-ui);
   }
   .type__of__baner:active {
     border-bottom: 2px solid var(--primary-color);

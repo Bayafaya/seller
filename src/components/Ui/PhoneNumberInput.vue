@@ -8,10 +8,9 @@
       <input
         type="tel"
         placeholder="(708)-888-888"
-        pattern="([0-9]{3})-[0-9]{3}-[0-9]{3}"
         minlength="9"
-        maxlength="10"
-        size="10"
+        maxlength="9"
+        size="9"
         required
       />
     </div>
@@ -28,29 +27,29 @@ export default {};
     column-gap: 16px;
 }
 .flag__block {
-  background: var(--light-color-4);
+  background: var(--bg-statistic);
   display: flex;
   align-items: center;
   column-gap: 8px;
   padding: 12px;
-  border-bottom: 1x solid var(--light-color-8);
+  border-bottom: 1px solid var(--border-of-stats);
 }
 .input__component div:nth-child(1){
-    border-bottom: 1px solid var(--light-color-8);
+  border-bottom: 1px solid var(--border-of-stats);
 }
 .input__component:focus-within  div:nth-child(1){
   border-bottom: 2px solid var(--primary-color);
 }
 .input__component:hover  div:nth-child(1){
-    border-bottom: 1px solid var(--light-color);
+  border-bottom: 1px solid var(--hover-ui);
 }
 .phone__input {
-  background: var(--light-color-4);
+  background: var(--bg-statistic);
   width: 100%;
   display: flex;
   align-items: center;
   padding: 12px;
-  border-bottom: 1px solid var(--light-color-8);
+  border-bottom: 1px solid var(--border-of-stats);
 }
 .phone__input input {
   background: transparent;
@@ -58,16 +57,17 @@ export default {};
   width: 100%;
   font-size: 14px;
   line-height: 20px;
+  color: var(--hover-ui);
 }
 .phone__input input:focus-visible {
-  color: var(--light-color);
+  color: var(--hover-ui);
   outline: none;
 }
 .phone__input:focus-within {
   border-bottom: 2px solid var(--primary-color);
 }
 .phone__input:hover {
-  border-bottom: 1px solid var(--light-color);
+  border-bottom: 1px solid var(--hover-ui);
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

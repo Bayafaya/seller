@@ -56,7 +56,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--light-color-8);
+  border-bottom: 1px solid var(--recent-item-border);
   border-right: 1px solid transparent;
   padding: 24px 0;
 }

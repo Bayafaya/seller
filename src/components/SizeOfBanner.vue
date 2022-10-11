@@ -3,7 +3,7 @@
     <div class="dialog__content">
       <div class="close__dialog">
         <h5>Тип баннера</h5>
-        <img src="../images/ri-close-line.svg" alt="close" />
+        <img src="../images/ri-close-line.svg" alt="close" @click="dialogVisible(false)"/>
       </div>
       <span class="title__of__banners">Выберите тип баннера</span>
       <div class="dialog__cards">
@@ -44,13 +44,20 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex';
 export default {
-  props: {
-    show: {
-      type: Boolean,
-      default: false,
-    },
+
+props:{
+  show:{
+    type:Boolean,
+    required:true,
   },
+},
+methods:{
+        ...mapMutations({
+            dialogVisible:'profile/dialogVisibleChange',
+        }),
+    },
 };
 </script>
 
@@ -60,7 +67,7 @@ export default {
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background:var(--modal-bg); 
   position: fixed;
   display: flex;
   z-index: 10;
@@ -69,7 +76,7 @@ export default {
   width: 616px;
   height: 496px;
   margin: auto auto;
-  background: var(--dark-color);
+  background: var(--statistic);
 }
 input[type="radio"] {
   display: none;
@@ -84,7 +91,7 @@ input[type="radio"]:checked + label {
 label {
   display: flex;
   flex-direction: column;
-  border: 2px solid var(--light-color-8);
+  border: 2px solid var(--recent-item-border);
   height: 160px;
   cursor: pointer;
   background-image: url(../images/ri-checkbox-blank-circle-line.svg);
@@ -103,8 +110,7 @@ label img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--light-color-8);
-  padding: 0 0 0 0;
+  border-bottom: 1px solid var(--border-of-stats);
 }
 .close__dialog h5:nth-child(1) {
   padding-left: 16px;
@@ -112,7 +118,7 @@ label img {
 .close__dialog img:nth-child(2) {
   background: var(--primary-color);
   cursor: pointer;
-  padding: 16px 16px 16px 16px;
+  padding: 16px;
 }
 .close__dialog img:nth-child(2):hover {
   background: #00b53e;
@@ -129,7 +135,7 @@ label img {
 }
 .title__of__banners{
   display: flex;
-  color: var(--light-color-48);
+  color: var(--text-ui);
   padding: 32px 16px 24px;
 }
 </style>

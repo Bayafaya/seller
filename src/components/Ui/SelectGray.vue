@@ -1,17 +1,19 @@
 <template>
   <select name="product__filter">
     <option disabled selected value="">Выберите из списка</option>
-    <option :key="option" v-for="option in options" :value="option">{{option}}</option>
+    <option :key="option" v-for="option in options" :value="option">
+      {{ option }}
+    </option>
   </select>
 </template>
 
 <script>
 export default {
   props: {
-    options:{
-        type:Array,
-        required:true
-    }
+    options: {
+      type: Array,
+      required: true,
+    },
   },
   methods: {},
 };
@@ -26,9 +28,9 @@ select {
   background-repeat: no-repeat;
   background-position: calc(100% - 3px) center;
   background-size: 24px;
-  background-color: var(--light-color-4);
+  background-color: var(--bg-statistic);
   border: none;
-  border-bottom: 1px solid var(--light-color-8);
+  border-bottom: 1px solid var(--border-of-stats);
   outline: 0px;
   font-size: 16px;
   line-height: 24px;
@@ -37,9 +39,11 @@ select {
   overflow: hidden;
   scroll-behavior: smooth;
   width: 100%;
-  color: var(--light-color-72);
+  color: var(--text-ui);
 }
-
+option {
+  color: black;
+}
 select#xyz {
   border: none;
 }

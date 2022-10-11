@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 .card {
-  background: var(--light-color-4);
+  background: var(--bg-statistic);
   min-height: 152px;
   padding: 24px;
   cursor: pointer;
@@ -37,7 +37,7 @@ export default {
   color: var(--dark-color);
 }
 .icon-head {
-  background-image: url('../images/ri-store-line.svg');
+  background-image: var(--card-store-url);
   width: 32px;
   height: 32px;
 }
@@ -51,7 +51,7 @@ export default {
   justify-content: space-between;
 }
 .icon-foot {
-  background-image: url("../images/ri-arrow-right-s-fill.svg");
+  background-image: var(--card-arrow-url);
   background-repeat: no-repeat;
   background-position: center;
   width: 24px;

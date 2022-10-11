@@ -52,7 +52,6 @@ export default {
   align-items: center;
   cursor: pointer;
   text-decoration: none;
-  color: black;
 }
 .link h5{
   white-space:nowrap;

@@ -43,22 +43,22 @@ data(){
   grid-template-areas:
     "profit stat"
     "sales stat";
-  background: var(--dark-color);
+  background-color: var(--statistic);
 }
 .statistic div:nth-child(1) {
   grid-area: profit;
-  border-bottom: 1px solid var(--light-color-4);
+  border-bottom: 1px solid var(--border-of-stats);
 }
 .statistic div:nth-child(2) {
   grid-area: sales;
 }
 .statistic div:nth-child(3) {
   grid-area: stat;
-  border-left: 1px solid var(--light-color-4);
+  border-left: 1px solid var(--border-of-stats);
 }
 .statistic__background {
   width: 100%;
-  background: var(--light-color-4);
+  background: var(--bg-statistic);
   padding: 48px 0;
   margin-bottom: 48px;
 }
