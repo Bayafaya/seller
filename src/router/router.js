@@ -4,6 +4,7 @@ import Profile from '@/pages/Profile.vue'
 import Notifications from '@/pages/Notifications.vue'
 import Reviews from '@/pages/Reviews.vue'
 import Products from '@/pages/Products.vue'
+import SignUp from '@/pages/SignUp.vue'
 
 
 const router = createRouter({
@@ -33,6 +34,11 @@ const router = createRouter({
             path: '/products',
             name: 'products',
             component: Products,
+        },
+        {
+            path: '/signUp',
+            name: 'signUp',
+            component: SignUp,
         },
     ],
 

@@ -1,8 +1,7 @@
 <template>
   <div class="app">
-    <Sidebar />
+    <!-- <Sidebar /> -->
     <div>
-      <!-- :style="{ 'margin-left': sidebarWidth,'transition':'0.3s'}" -->
       <router-view></router-view>
     </div>
   </div>
@@ -109,6 +108,10 @@ span {
 }
 .container__form{
   width:  720px; 
+  margin: 0 auto;
+}
+.container__registration{
+  width: 550px;
   margin: 0 auto;
 }
 body.body--dark{

@@ -17,6 +17,7 @@ background:var(--primary-color);
 border: none;
 color: var(--dark-color);
 width: 100%;
+cursor: pointer;
 }
 button:hover{
     background: #00B53E;

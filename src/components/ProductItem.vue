@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="icon">
-        <img src="../images/productcofe.png" alt="productcofe" />
+        <img src="../images/photo_2022-09-22_10-35-46.jpg" alt="productcofe" />
       </div>
       <h5>{{ itemData.name }}</h5>
     </div>
@@ -58,6 +58,7 @@ export default {
 .icon img {
   padding: 4px;
   height: 100%;
+  border-radius: 50%;
 }
 .product_item h5:nth-child(3) b {
   color: var(--count-of-product);
