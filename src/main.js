@@ -6,7 +6,6 @@ import quasarUserOptions from './quasar-user-options'
 import store from './store';
 
 
-
 const app = createApp(App).use(Quasar, quasarUserOptions)
 
 

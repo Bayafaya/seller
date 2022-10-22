@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-input[type="file"] {
+input[type="file"]{
   display: none;
 }
 label{
