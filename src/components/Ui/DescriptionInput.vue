@@ -22,6 +22,7 @@
     padding: 12px;
     background: var(--bg-statistic);
     border-bottom: 1px solid var(--recent-item-border);
+    width: 100%;
   }
   .textarea textarea{ 
    background: transparent;

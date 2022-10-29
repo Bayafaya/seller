@@ -7,7 +7,7 @@
       hide-selected
       fill-input
       input-debounce="0"
-      placeholder="Выберите страну"
+      :placeholder="placeholderTxt"
       :options="options"
       @filter="filterFn"
       style="width: 100%; padding-bottom: 32px"
@@ -18,7 +18,7 @@
       </template>
       <template v-slot:no-option>
         <q-item>
-          <q-item-section class="text-grey"> Нету такой страны </q-item-section>
+          <q-item-section class="text-grey"> {{noOptionPlaceholder}} </q-item-section>
         </q-item>
       </template>
     </q-select>
@@ -27,10 +27,9 @@
 <script>
 import { ref } from "vue";
 
-const stringOptions = ["Азербайджан", "Армения", "Белоруссия", "Казахстан", "Кыргызстан","Молдавия","Россия","Таджикистан","Узбекистан"];
-
 export default {
-  setup() {
+  setup(props) {
+    const stringOptions = props.itemList;
     const options = ref(stringOptions);
 
     return {
@@ -47,6 +46,22 @@ export default {
       },
     };
   },
+  props:{
+    itemList:{
+      type:Array,
+      required:false,
+    },
+    noOptionPlaceholder:{
+      type:String,
+      required:true,
+    },
+    placeholderTxt:{
+      type:String,
+      required:false,
+    }
+  },
+
+
 };
 </script>
 <style scoped>

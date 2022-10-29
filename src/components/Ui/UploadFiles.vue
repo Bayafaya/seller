@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="file" id="file" accept="image/*" />
-    <span>Логотип магазина</span>
+    <span>{{title}}</span>
     <label for="file">
       <img :src="iconSrc" alt="iconSrc" />{{ placeholder }}</label>
   </div>
@@ -10,6 +10,10 @@
 <script>
 export default {
   props: {
+    title:{
+      type: String,
+      required: true,
+    },
     placeholder: {
       type: String,
       required: true,

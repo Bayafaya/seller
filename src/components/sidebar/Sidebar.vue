@@ -7,9 +7,9 @@
             >Закрыть окно</sidebar-link
           >
         </li>
-        <li class="links active" @click="$router.push('/')" id="/">
+        <li class="links active" @click="$router.push('/main')" id="/main">
           <sidebar-link
-            to="/"
+            to="/main"
             icon="/src/images/SideBarLight/ri-pie-chart-line.svg"
             >Приборный панель</sidebar-link
           >
@@ -58,9 +58,9 @@
             >Закрыть окно</sidebar-link
           >
         </li>
-        <li class="links active" @click="$router.push('/')" id="/">
+        <li class="links active" @click="$router.push('/main')" id="/main">
           <sidebar-link
-            to="/"
+            to="/main"
             icon="/src/images/SideBarDark/ri-pie-chart-line.svg"
             >Приборный панель</sidebar-link
           >
@@ -97,9 +97,8 @@
             >Профиль</sidebar-link
           >
         </li>
-        <li class="links"  @click="this.$q.dark.toggle()">
-          <sidebar-link
-            icon="/src/images/SideBarDark/ri-moon-line.svg"
+        <li class="links" @click="this.$q.dark.toggle()">
+          <sidebar-link icon="/src/images/SideBarDark/ri-moon-line.svg"
             >Сменить тему
           </sidebar-link>
         </li>
@@ -142,7 +141,6 @@ export default {
   left: 0;
   bottom: 0;
   transition: 0.3s ease;
-
 }
 .sidebar nav {
   display: flex;

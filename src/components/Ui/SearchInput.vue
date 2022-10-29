@@ -16,7 +16,7 @@
       :placeholder="dataAboutInput.placeholder"
       type="number"
     />
-    <h5 v-if="dataAboutInput.price">c</h5>
+    <h5 v-if="dataAboutInput.currency">c</h5>
 
   </div>
 </template>
@@ -39,6 +39,7 @@ export default {
   background: var(--bg-statistic);
   padding: 12px;
   border-bottom: 1px solid var(--border-of-stats);
+  width: 100%;
 }
 .input img {
   margin-right: 10px;

@@ -5,16 +5,22 @@ import Notifications from '@/pages/Notifications.vue'
 import Reviews from '@/pages/Reviews.vue'
 import Products from '@/pages/Products.vue'
 import SignUp from '@/pages/SignUp.vue'
-
+import AddProduct from '@/pages/AddProduct.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
-            path: '/',
+            path: '/main',
             name: 'main',
             component: MainPage,
+            alias: '/main',
         },
+        {
+            path: "/:catchAll(.*)",
+            redirect: { name: 'main' }
+        },
+
         {
             path: '/profile',
             name: 'profile',
@@ -39,6 +45,12 @@ const router = createRouter({
             path: '/signUp',
             name: 'signUp',
             component: SignUp,
+        },
+    
+        {
+            path: '/addProduct',
+            name: 'addProduct',
+            component: AddProduct,
         },
     ],
 

@@ -2,7 +2,7 @@
   <div class="search__bar container">
     <h3>Товары</h3>
     <search-input :dataAboutInput="inputData" />
-    <div class="add__product">
+    <div class="add__product" @click="$router.push('/addProduct')">
       <h5>Добавить товар</h5>
       <div><img src="../images/plus.svg" alt="plus" /></div>
     </div>
@@ -23,7 +23,7 @@
 import SearchInput from "../components/Ui/SearchInput.vue";
 import MySelect from "../components/Ui/MySelect.vue";
 import ProductItem from "../components/ProductItem.vue";
-// import 'quasar/dist/quasar.css'
+
 export default {
   components: { SearchInput, MySelect, ProductItem },
   data() {
@@ -108,6 +108,7 @@ export default {
   display: flex;
   align-items: center;
   column-gap: 16px;
+  cursor: pointer;
 }
 .filter__bar {
   display: flex;

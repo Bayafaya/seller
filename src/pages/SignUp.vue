@@ -9,7 +9,11 @@
         class="container__registration registration__block"
       >
         <title-of-steps-and-progress-bar :titleAndProgress="titleAndProgress" />
-        <basic-filtering />
+        <basic-filtering 
+        placeholderTxt="Выберите страну" 
+        noOptionPlaceholder="Нету такой страны" 
+        :itemList='["Азербайджан", "Армения", "Белоруссия", "Казахстан", "Кыргызстан","Молдавия","Россия","Таджикистан","Узбекистан"]'
+        />
         <default-button @click="nextStep">Далее</default-button>
       </div>
       <div

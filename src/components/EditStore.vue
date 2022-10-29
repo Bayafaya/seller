@@ -37,6 +37,7 @@
         <div class="upload__files__block">
           <h4>Оформление</h4>
           <upload-files
+            title="Логотип магазина"
             placeholder="Добавить логотип"
             iconSrc="src/images/ri-image-add-line.svg"
           />
