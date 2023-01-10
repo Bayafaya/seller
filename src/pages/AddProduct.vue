@@ -1,7 +1,7 @@
-<template>
+<template> 
   <div class="container">
     <div class="exit">
-      <img src="../images/ri-arrow-go-back-fill.svg" alt="go-back" />
+      <img src="/images/ri-arrow-go-back-fill.svg" alt="go-back" />
       <h5>вернуться</h5>
     </div>
     <form>
@@ -85,7 +85,7 @@
               <upload-files
                 placeholder="Добавить фото"
                 title="Фотографии"
-                iconSrc="src/images/ri-image-add-line.svg"
+                iconSrc="/images/ri-image-add-line.svg"
               />
             </div>
             <div class="youtube">

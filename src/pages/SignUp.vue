@@ -119,7 +119,7 @@
             <default-button @click="nextStep">Далее</default-button>
           </div>
           <div class="brand__product">
-            <img src="src/images/Brand product.png" alt="Brand product" />
+            <img src="/images/Brand_product.png" alt="Brand product" />
           </div>
         </div>
       </div>

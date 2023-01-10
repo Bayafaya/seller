@@ -3,14 +3,14 @@
     <div class="product_item__title">
       <div v-if="itemData.showImg">
         <div v-if="itemData.check">
-          <img src="../images/checked.svg" alt="checked" />
+          <img src="/images/checked.svg" alt="checked" />
         </div>
         <div v-else>
-          <img src="../images/promise.svg" alt="checked" />
+          <img src="/images/promise.svg" alt="checked" />
         </div>
       </div>
       <div class="icon">
-        <img src="../images/photo_2022-09-22_10-35-46.jpg" alt="productcofe" />
+        <img src="/images/photo_2022-09-22_10-35-46.jpg" alt="productcofe" />
       </div>
       <h5>{{ itemData.name }}</h5>
     </div>

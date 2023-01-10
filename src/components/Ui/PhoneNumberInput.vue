@@ -1,7 +1,7 @@
 <template>
   <div class="input__component">
     <div class="flag__block">
-      <img src="../../images/Flag icon.svg" alt="Flag" />
+      <img src="/images/Flag_icon.svg" alt="Flag" />
       <h5>+996</h5>
     </div>
     <div class="phone__input">

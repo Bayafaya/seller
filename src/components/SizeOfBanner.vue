@@ -3,7 +3,7 @@
     <div class="dialog__content">
       <div class="close__dialog">
         <h5>Тип баннера</h5>
-        <img src="../images/ri-close-line.svg" alt="close" @click="dialogVisible(false)"/>
+        <img src="/images/ri-close-line.svg" alt="close" @click="dialogVisible(false)"/>
       </div>
       <span class="title__of__banners">Выберите тип баннера</span>
       <div class="dialog__cards">
@@ -11,7 +11,7 @@
           <input type="radio" id="320X200" name="bannerSize" />
           <label for="320X200"
             ><h6>320 X 200 px</h6>
-            <img src="../images/320x200.jpg" alt="320x200"
+            <img src="/images/320x200.jpg" alt="320x200"
           /></label>
         </div>
 
@@ -19,7 +19,7 @@
           <input type="radio" id="320X120" name="bannerSize" />
           <label for="320X120">
             <h6>320 X 120 px</h6>
-            <img src="../images/320x120.jpg" alt="320x120"
+            <img src="/images/320x120.jpg" alt="320x120"
           /></label>
         </div>
 
@@ -27,7 +27,7 @@
           <input type="radio" id="160X80" name="bannerSize" />
           <label for="160X80"
             ><h6>160 X 80 px</h6>
-            <img src="../images/160x80.jpg" alt="160x80"
+            <img src="/images/160x80.jpg" alt="160x80"
           /></label>
         </div>
 
@@ -35,7 +35,7 @@
           <input type="radio" id="720X360" name="bannerSize" />
           <label for="720X360"
             ><h6>720 X 360 px</h6>
-            <img src="../images/720x360.jpg" alt="720X360"
+            <img src="/images/720x360.jpg" alt="720X360"
           /></label>
         </div>
       </div>

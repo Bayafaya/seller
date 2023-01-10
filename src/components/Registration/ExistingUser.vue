@@ -4,7 +4,7 @@
       v-if="$store.state.auth.step === 1"
       class="login" 
     >
-      <img src="../../images/Logo.svg" alt="Logo" />
+      <img src="/images/Logo.svg" alt="Logo" />
       <div>
         <h2>Войти в систему</h2>
         <div class="number__input__block">
@@ -18,7 +18,7 @@
       v-if="$store.state.auth.step === 2"
       class="login registration__container"
     >
-      <img src="../../images/Logo.svg" alt="Logo" />
+      <img src="/images/Logo.svg" alt="Logo" />
       <div>
         <h2>Войти в систему</h2>
         <div class="number__input__block">

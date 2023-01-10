@@ -93,6 +93,7 @@
                   v-model="date"
                   mask="date"
                   :rules="['date']"
+                  color="green"
                 >
                   <template v-slot:append>
                     <q-icon name="event" class="cursor-pointer">
@@ -101,12 +102,14 @@
                         transition-show="scale"
                         transition-hide="scale"
                       >
-                        <q-date v-model="date">
+                        <q-date 
+                        color="green"
+                        v-model="date">
                           <div class="row items-center justify-end">
                             <q-btn
                               v-close-popup
                               label="Close"
-                              color="primary"
+                              color="green"
                               flat
                             />
                           </div>
@@ -124,6 +127,7 @@
                   v-model="date"
                   mask="date"
                   :rules="['date']"
+                  color="green"
                 >
                   <template v-slot:append>
                     <q-icon name="event" class="cursor-pointer">
@@ -132,12 +136,15 @@
                         transition-show="scale"
                         transition-hide="scale"
                       >
-                        <q-date v-model="date">
+                        <q-date 
+                         v-model="date"
+                         color="green"
+                         >
                           <div class="row items-center justify-end">
                             <q-btn
                               v-close-popup
                               label="Close"
-                              color="primary"
+                              color="green"
                               flat
                             />
                           </div>
@@ -198,7 +205,6 @@
             unchecked-icon="radio_button_unchecked"
             indeterminate-icon="help"
             label="Управление уровнем запасов (количеством)"
-            @click="show"
           />
           <div class="root__with__products" v-if="left2">
             <div class="input__with__title">
@@ -363,7 +369,37 @@
         </div>
       </div>
       <div v-if="$store.state.productDataWindow.profileWindow === 5">
-        Атрибуты
+        <div class="input__with__title first__block__of__main">
+          <span>Апсейл</span>
+          <div class="with__tooltip">
+            <q-select
+              style="width: 100%"
+              standout
+              color="green"
+              filled
+              v-model="upSale"
+              square
+              :options="[
+                `Индивидуальный атрибут товара`,
+                `Размер`,
+                `Размер Одежды Муж`,
+                'Размер Одежды Жен',
+                'Коробка',
+              ]"
+            />
+            <default-button @click.prevent="addAttributeItem(upSale)" style="width: 20%">Добавить</default-button>
+          </div>
+        </div>
+        <div>
+          <div class="list__of__attribute">
+        
+          <individual-attribute 
+          :key="attributeItem.id"
+          v-for="attributeItem in $store.state.productDataWindow.attribute"
+           :listItem='attributeItem'/>          
+          </div>
+        </div>
+        <!-- <default-button>Сохранить атрибуты</default-button> -->
       </div>
       <div v-if="$store.state.productDataWindow.profileWindow === 6">
         <div class="first__block__of__main">
@@ -371,71 +407,74 @@
             <span>Примечание к покупке</span>
             <div>
               <div class="with__tooltip">
-               <description-input dataAboutInput='Примечание'/>
+                <description-input dataAboutInput="Примечание" />
                 <tooltip-icon-question textForTooltip="текст подсказки" />
               </div>
             </div>
           </div>
-          <div 
-          style="
-          padding-top: 32px;
-          margin-top: 32px;
-          border-top: 1px solid var(--border-of-stats);
-          " 
-          class="input__with__title">
+          <div
+            style="
+              padding-top: 32px;
+              margin-top: 32px;
+              border-top: 1px solid var(--border-of-stats);
+            "
+            class="input__with__title"
+          >
             <span>Порядок</span>
             <div>
               <div class="with__tooltip">
-                <search-input :dataAboutInput="{price:true,icon:false,placeholder:0}"/>
+                <search-input
+                  :dataAboutInput="{ price: true, icon: false, placeholder: 0 }"
+                />
                 <tooltip-icon-question textForTooltip="текст подсказки" />
               </div>
             </div>
           </div>
         </div>
         <q-checkbox
-            style="margin: 26px 0"
-            dense
-            v-model="reviews"
-            color="green"
-            size="48px"
-            checked-icon="radio_button_checked"
-            unchecked-icon="radio_button_unchecked"
-            indeterminate-icon="help"
-            label="Включить отзывы"
-            @click="show"
-          />
+          style="margin: 26px 0"
+          dense
+          v-model="reviews"
+          color="green"
+          size="48px"
+          checked-icon="radio_button_checked"
+          unchecked-icon="radio_button_unchecked"
+          indeterminate-icon="help"
+          label="Включить отзывы"
+          @click="show"
+        />
       </div>
       <div v-if="$store.state.productDataWindow.profileWindow === 7">
         <div class="input__with__title">
-            <span>Магазин</span>
-            <div>
-              <q-select
-                    style="width: 100%"
-                    standout
-                    color="green"
-                    filled
-                    v-model="market"
-                    square
-                    :options="[` Магазин 1`,` Магазин 2`,` Магазин 3`]"
-                  />  
-            </div>
+          <span>Магазин</span>
+          <div>
+            <q-select
+              style="width: 100%"
+              standout
+              color="green"
+              filled
+              v-model="market"
+              square
+              :options="[` Магазин 1`, ` Магазин 2`, ` Магазин 3`]"
+            />
           </div>
+        </div>
       </div>
       <div v-if="$store.state.productDataWindow.profileWindow === 8">
         <div class="input__with__title">
-            <span>Магазин</span>
-            <div>
-              <q-select
-                    style="width: 100%"
-                    standout
-                    color="green"
-                    filled
-                    v-model="market"
-                    square
-                    :options="[` Магазин 1`,` Магазин 2`,` Магазин 3`]"
-                  />  
-            </div>
+          <span>Магазин</span>
+          <div>
+            <q-select
+              style="width: 100%"
+              standout
+              color="green"
+              filled
+              v-model="market"
+              square
+              :options="[` Магазин 1`, ` Магазин 2`, ` Магазин 3`]"
+            />
           </div>
+        </div>
       </div>
     </div>
   </div>
@@ -446,9 +485,17 @@ import { ref } from "vue";
 import { mapMutations } from "vuex";
 import SearchInput from "./Ui/SearchInput.vue";
 import TooltipIconQuestion from "./Ui/TooltipIconQuestion.vue";
-import DescriptionInput from './Ui/DescriptionInput.vue';
+import DescriptionInput from "./Ui/DescriptionInput.vue";
+import DefaultButton from "./Ui/DefaultButton.vue";
+import IndividualAttribute from './Ui/IndividualAttribute.vue';
 export default {
-  components: { SearchInput, TooltipIconQuestion, DescriptionInput },
+  components: {
+    SearchInput,
+    TooltipIconQuestion,
+    DescriptionInput,
+    DefaultButton,
+    IndividualAttribute,
+  },
   setup() {
     return {
       simple: ref("Просто"),
@@ -459,13 +506,16 @@ export default {
       book: ref("Не разрешать"),
       deliveryType: ref("Класс доставки не указан"),
       reviews: ref(false),
-      market:ref(`Выбрать Магазин ...`),
+      market: ref(`Выбрать Магазин ...`),
+      upSale: ref(`Индивидуальный атрибут товара`),
+
     };
   },
   methods: {
     ...mapMutations({
       expansionToggle: "productDataWindow/expansionToggle",
       statePage: "productDataWindow/changePageProductDataWind",
+      addAttributeItem:"productDataWindow/addAttributeItem",
     }),
     changeToActivePage(page, event) {
       this.statePage(page);
@@ -477,6 +527,9 @@ export default {
     },
     show() {
       console.log(this.reviews);
+    },
+    deleteItemAttribute(event){
+      console.log(event);
     },
   },
 };
@@ -598,9 +651,13 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.related{
+.related {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
+.list__of__attribute {
+  padding: 24px 0 0 0;
+}
+
 </style>

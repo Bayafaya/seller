@@ -2,7 +2,7 @@
     <div class="container__form">
       <div class="edit__store">
         <div class="back__link" @click="changePage(1)">
-          <img src="../images/ri-arrow-go-back-fill.svg" alt="back" />
+          <img src="/images/ri-arrow-go-back-fill.svg" alt="back" />
           <h5>вернуться</h5>
         </div>
         <h3>Отпуск магазина</h3>

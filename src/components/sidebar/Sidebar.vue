@@ -3,20 +3,20 @@
     <nav id="sidebarNav">
       <ul class="nav__links" v-if="!this.$q.dark.isActive">
         <li class="links" @click="toggleSidebar">
-          <sidebar-link icon="/src/images/SideBarLight/ri-menu-line.svg"
+          <sidebar-link icon="/images/SideBarLight/ri-menu-line.svg"
             >Закрыть окно</sidebar-link
           >
         </li>
         <li class="links active" @click="$router.push('/main')" id="/main">
           <sidebar-link
             to="/main"
-            icon="/src/images/SideBarLight/ri-pie-chart-line.svg"
+            icon="/images/SideBarLight/ri-pie-chart-line.svg"
             >Приборный панель</sidebar-link
           >
         </li>
         <li class="links" @click="$router.push('/products')" id="/products">
           <sidebar-link
-            icon="/src/images/SideBarLight/ri-inbox-archive-line.svg"
+            icon="/images/SideBarLight/ri-inbox-archive-line.svg"
             to="/products"
             >Товары</sidebar-link
           >
@@ -27,47 +27,47 @@
           id="/notifications"
         >
           <sidebar-link
-            icon="/src/images/SideBarLight/ri-notification-3-line.svg"
+            icon="/images/SideBarLight/ri-notification-3-line.svg"
             to="/notifications"
             >Акции</sidebar-link
           >
         </li>
         <li class="links" @click="$router.push('/reviews')" id="/reviews">
           <sidebar-link
-            icon="/src/images/SideBarLight/ri-star-line.svg"
+            icon="/images/SideBarLight/ri-star-line.svg"
             to="/reviews"
             >Отзывы</sidebar-link
           >
         </li>
         <li class="links" @click="$router.push('/profile')" id="/profile">
           <sidebar-link
-            icon="/src/images/SideBarLight/ri-user-3-line.svg"
+            icon="/images/SideBarLight/ri-user-3-line.svg"
             to="/profile"
             >Профиль</sidebar-link
           >
         </li>
         <li class="links" @click="this.$q.dark.toggle()">
-          <sidebar-link icon="/src/images/SideBarLight/ri-sun-line.svg"
+          <sidebar-link icon="/images/SideBarLight/ri-sun-line.svg"
             >Сменить тему
           </sidebar-link>
         </li>
       </ul>
       <ul class="nav__links" v-else>
         <li class="links" @click="toggleSidebar">
-          <sidebar-link icon="/src/images/SideBarDark/ri-menu-line.svg"
+          <sidebar-link icon="/images/SideBarDark/ri-menu-line.svg"
             >Закрыть окно</sidebar-link
           >
         </li>
         <li class="links active" @click="$router.push('/main')" id="/main">
           <sidebar-link
             to="/main"
-            icon="/src/images/SideBarDark/ri-pie-chart-line.svg"
+            icon="/images/SideBarDark/ri-pie-chart-line.svg"
             >Приборный панель</sidebar-link
           >
         </li>
         <li class="links" @click="$router.push('/products')" id="/products">
           <sidebar-link
-            icon="/src/images/SideBarDark/ri-inbox-archive-line.svg"
+            icon="/images/SideBarDark/ri-inbox-archive-line.svg"
             to="/products"
             >Товары</sidebar-link
           >
@@ -78,40 +78,40 @@
           id="/notifications"
         >
           <sidebar-link
-            icon="/src/images/SideBarDark/ri-notification-3-line.svg"
+            icon="/images/SideBarDark/ri-notification-3-line.svg"
             to="/notifications"
             >Акции</sidebar-link
           >
         </li>
         <li class="links" @click="$router.push('/reviews')" id="/reviews">
           <sidebar-link
-            icon="/src/images/SideBarDark/ri-star-line.svg"
+            icon="/images/SideBarDark/ri-star-line.svg"
             to="/reviews"
             >Отзывы</sidebar-link
           >
         </li>
         <li class="links" @click="$router.push('/profile')" id="/profile">
           <sidebar-link
-            icon="/src/images/SideBarDark/ri-user-3-line.svg"
+            icon="/images/SideBarDark/ri-user-3-line.svg"
             to="/profile"
             >Профиль</sidebar-link
           >
         </li>
         <li class="links" @click="this.$q.dark.toggle()">
-          <sidebar-link icon="/src/images/SideBarDark/ri-moon-line.svg"
+          <sidebar-link icon="/images/SideBarDark/ri-moon-line.svg"
             >Сменить тему
           </sidebar-link>
         </li>
       </ul>
       <div class="exit" v-if="!this.$q.dark.isActive">
         <img
-          src="/src/images/SideBarLight/ri-logout-box-r-line.svg"
+          src="/images/SideBarLight/ri-logout-box-r-line.svg"
           alt="logout"
         />
       </div>
       <div class="exit" v-else>
         <img
-          src="/src/images/SideBarDark/ri-logout-box-r-line.svg"
+          src="/images/SideBarDark/ri-logout-box-r-line.svg"
           alt="logout"
         />
       </div>

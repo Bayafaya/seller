@@ -2,7 +2,7 @@
   <div class="input">
     <img
       v-if="dataAboutInput.icon"
-      src="../../images/search.svg"
+      src="/images/search.svg"
       alt="search"
     />
     <input

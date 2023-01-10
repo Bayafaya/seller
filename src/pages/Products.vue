@@ -4,7 +4,7 @@
     <search-input :dataAboutInput="inputData" />
     <div class="add__product" @click="$router.push('/addProduct')">
       <h5>Добавить товар</h5>
-      <div><img src="../images/plus.svg" alt="plus" /></div>
+      <div><img src="/images/plus.svg" alt="plus" /></div>
     </div>
   </div>
   <div class="products__bar container">
@@ -15,7 +15,7 @@
     <div class="product__list" v-if="itemDatas.length > 0">
       <product-item :key="itemData.name" v-for="itemData in itemDatas" :itemData="itemData"/>
     </div>
-    <div class="product__list__null" v-else><img src="../images/open-box.svg" alt="No Products"> <h6>Нет товара</h6></div>
+    <div class="product__list__null" v-else><img src="/images/open-box.svg" alt="No Products"> <h6>Нет товара</h6></div>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
     <div class="container__form">
       <div class="edit__store">
         <div class="back__link"  @click="changePage(1)">
-          <img src="../images/ri-arrow-go-back-fill.svg" alt="back" />
+          <img src="/images/ri-arrow-go-back-fill.svg" alt="back" />
           <h5>вернуться</h5>
         </div>
         <h3>Настройка магазина</h3>
@@ -39,13 +39,13 @@
           <upload-files
             title="Логотип магазина"
             placeholder="Добавить логотип"
-            iconSrc="src/images/ri-image-add-line.svg"
+            iconSrc="/images/ri-image-add-line.svg"
           />
           <div class="user__data__label">
             <span>Тип баннера</span>
             <div class="type__of__baner" @click="dialogVisible(true)">
               <h6>Выбрать</h6>
-              <img src="../images/ri-arrow-right-s-fill.svg" alt="arrow" />
+              <img src="/images/ri-arrow-right-s-fill.svg" alt="arrow" />
             </div>
           </div>
         </div>

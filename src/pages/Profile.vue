@@ -5,12 +5,12 @@
         <h3>Профиль</h3>
         <div class="logout">
           <h6>Выйти из системы</h6>
-          <img v-if="!this.$q.dark.isActive" src="../images/SideBarLight/ri-logout-box-r-line.svg" alt="logout" />
-          <img v-else src="../images/SideBarDark/ri-logout-box-r-line.svg" alt="logout" />
+          <img v-if="!this.$q.dark.isActive" src="/images/SideBarLight/ri-logout-box-r-line.svg" alt="logout" />
+          <img v-else src="/images/SideBarDark/ri-logout-box-r-line.svg" alt="logout" />
         </div>
       </div>
       <div class="container avatar__block">
-        <img src="../images/Avatar.png" alt="Avatar" />
+        <img src="/images/Avatar.png" alt="Avatar" />
         <h4>Кайрат Талатович</h4>
       </div>
     </div>

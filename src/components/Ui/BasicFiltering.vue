@@ -14,7 +14,7 @@
       color="green"
     >
         <template v-slot:prepend>
-            <img src="../../images/search.svg" alt="search">
+            <img src="/images/search.svg" alt="search">
       </template>
       <template v-slot:no-option>
         <q-item>

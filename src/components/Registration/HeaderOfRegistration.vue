@@ -1,10 +1,10 @@
 <template>
      <div class="header__of__registration">
         <div class="exit" @click="previousStep">
-          <img src="../../images/ri-arrow-go-back-fill.svg" alt="go-back" />
+          <img src="/images/ri-arrow-go-back-fill.svg" alt="go-back" />
           <h5>вернуться</h5>
         </div>
-        <img src="../../images/Logo.svg" alt="Logo" />
+        <img src="/images/Logo.svg" alt="Logo" />
       </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="welcome">
     <div class="sign__up">
-      <img src="../../images/Logo.svg" alt="Logo" />
+      <img src="/images/Logo.svg" alt="Logo" />
       <div class="welcome__text">
         <h4>Добро пожаловать</h4>
         <div>
@@ -20,7 +20,7 @@
     </div>
     <div class="partners">
       <h5>C нами уже работают</h5>
-      <img src="../../images/Logos.svg" alt="Logos" />
+      <img src="/images/Logos.svg" alt="Logos" />
     </div>
   </div>
 </template>
